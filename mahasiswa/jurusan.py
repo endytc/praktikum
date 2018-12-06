@@ -62,10 +62,29 @@ class Jurusan():
       jurusan.created_at = result[2]
       jurusan.updated_at = result[3]
       jurusanResult.append(jurusan)
+
     return jurusanResult
+  
+  @staticmethod
+  def find(id):
+    query = ("select * from jurusan where id=%s" %(id))
+    conn = DBConnection.get_conn()
+    cursor = conn.cursor()
+    cursor.execute(query)
+
+    jurusanResult = []
+    result = cursor.fetchone()
+    
+    jurusan = Jurusan()
+    jurusan.id = result[0]
+    jurusan.jurusan = result[1]
+    jurusan.created_at = result[2]
+    jurusan.updated_at = result[3]
+      
+    return jurusan
 
 
-# jurusan  = Jurusan("Teknik Informatika")
+# jurusan  = Jurusan("Teknik Sipil")
 # jurusan.save()
 
 # jurusan.jurusan = "Seni"
@@ -73,5 +92,7 @@ class Jurusan():
 
 # jurusan.delete()
 
-jurusanList = Jurusan.getAll()
-print (len(jurusanList))
+# jurusanList = Jurusan.getAll()
+# for jurusan in jurusanList:
+#   print(jurusan.jurusan)
+# print (len(jurusanList))
