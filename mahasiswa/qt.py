@@ -11,7 +11,14 @@ def simpanMahasiswa():
   m.nim = dlg.nimLineEdit.text()
   m.nama = dlg.namaLineEdit.text()
   m.jurusan = jurusanComboBox.currentData()
-  m.tanggal_lahir = dlg.tanggalLahirDateEdit.text()
+  date = dlg.tanggalLahirDateEdit.date()
+  
+  tanggal = date.day()
+  bulan = date.month()
+  tahun = date.year()
+
+  m.tanggal_lahir = str(tahun)+"-"+str(bulan)+"-"+str(tanggal)
+
   m.save()
 
 
