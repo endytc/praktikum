@@ -5,8 +5,8 @@ from jurusan import Jurusan
 class Mahasiswa():
   def __init__(self):
     self.id = None
-    self.nama = None
-    self.nim = None
+    self.nama = ""
+    self.nim = ""
     self.tanggal_lahir = None
     self.jurusan = None
     self.created_at = datetime.today()
@@ -66,7 +66,7 @@ class Mahasiswa():
     mahasiswaResult = []
     results = cursor.fetchall()
     for result in results:
-      mahasiswa = mahasiswa()
+      mahasiswa = Mahasiswa()
       mahasiswa.id = result[0]
       mahasiswa.jurusan = Jurusan.find(result[1])
       mahasiswa.nim = result[2]
@@ -77,11 +77,3 @@ class Mahasiswa():
       mahasiswaResult.append(mahasiswa)
       
     return mahasiswaResult
-
-
-mahasiswa = Mahasiswa()
-mahasiswa.nim = "0001"
-mahasiswa.nama = "Eko Sulistiyono"
-mahasiswa.jurusan = Jurusan.find(21)
-mahasiswa.tanggal_lahir = "1999-02-01"
-mahasiswa.save()

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>346</width>
-    <height>246</height>
+    <width>871</width>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -101,6 +101,9 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="displayFormat">
+     <string>d/M/yyyy</string>
+    </property>
    </widget>
    <widget class="QComboBox" name="jurusanComboBox">
     <property name="geometry">
@@ -125,13 +128,23 @@
      <string>Simpan</string>
     </property>
    </widget>
+   <widget class="QTableView" name="mahasiswaTableView">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>40</y>
+      <width>421</width>
+      <height>491</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>346</width>
+     <width>871</width>
      <height>22</height>
     </rect>
    </property>
