@@ -1,12 +1,20 @@
-from abc import ABC, abstractmethod
-class Pegawai(ABC):
+class Pegawai():
+  def __init__(self):
+    self.nama = None
+    self.gaji_pokok = None
+    self.uang_makan = 50000
+    self.presensi = 0
+
   def presensi(self):
-    print("melakukan presensi menggunakan sidik jari")
-    
-  @abstractmethod
+    self.presensi+=1
+
   def hitungGaji(self):
-    pass
-  
+    print("lengkapi")
+
+class ProjectManajer(Pegawai):
+  def __init__(self):
+    self.tunjangan_jabatan = 5000000
+
 
 class Designer(Pegawai):
   def hitungGaji(self):

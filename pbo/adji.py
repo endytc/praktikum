@@ -1,11 +1,13 @@
 from abc import ABC, abstractmethod
 
 class Storage(ABC):
-  @staticmethod
-  def simpan():
-    file=open(self.get_file(),"")
+  def simpan(self):
+    file=open(self.get_file(),"a")
+    print(self.get_data())
     for key,data in self.get_data():
       data=file.write("%s: %s \n"%(key,data))
+      print(key,data)
+      print("%s: %s \n"%(key,data))
 
   @abstractmethod
   def get_file(self):
